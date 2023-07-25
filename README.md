@@ -1,2 +1,2 @@
 # VhdxCommand
- Vhdx manage Command line
+ Vhdx Iso manage Command line
