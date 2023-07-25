@@ -1,0 +1,45 @@
+
+Usage:	 <Name> <Arguments>
+Supported Names and Arguments:
+   GetVirtualDiskInformation <path>
+   CreateFixedVirtualDisk <path> <file size> <block size> <logical sector size> <physical sector size>
+   CreateDynamicVirtualDisk <path> <file size> <block size> <logical sector size> <physical sector size>
+   CreateDifferencingVirtualDisk <path> <parent path>
+   AttachVirtualDisk <path> <readonly>
+   DetachVirtualDisk <path>
+   SetVirtualDiskInformation <child> <parent> <physical sector size>
+   MergeVirtualDisk <path>
+   CompactVirtualDisk <path>
+   ResizeVirtualDisk <path> 2147483648
+   MirrorVirtualDisk <source> <destination>
+   RawIO <source> <destination>
+   EnumerateUserMetaData <path>
+   SetUserMetaData <path> <metadata int>
+   GetUserMetaData <path>
+   DeleteUserMetaData <path>
+   AddVirtualDiskParent <path> <parent path>
+   GetStorageDependencyInformation [<volume> | <disk>]
+   GetAllAttachedVirtualDiskPhysicalPaths
+
+Examples:
+    GetVirtualDiskInformation c:\fixed.vhd
+    CreateFixedVirtualDisk c:\fixed.vhd 1073741824 0 0 0
+    CreateDynamicVirtualDisk c:\dynamic.vhdx 1073741824 0 0 0
+    CreateDifferencingVirtualDisk c:\diff.vhdx c:\dynamic.vhdx
+    AttachVirtualDisk c:\fixed.vhd true
+    DetachVirtualDisk c:\fixed.vhd
+    SetVirtualDiskInformation c:\diff.vhd c:\fixed.vhd 4096
+    MergeVirtualDisk c:\diff.vhd
+    CompactVirtualDisk c:\dynamic.vhd
+    ResizeVirtualDisk c:\dynamic.vhd 2147483648
+    MirrorVirtualDisk c:\fixed.vhd c:\fixed2.vhd
+    RawIO c:\source.vhdx c:\destination.vhdx
+    EnumerateUserMetaData c:\fixed.vhdx
+    SetUserMetaData c:\fixed.vhdx 1234
+    GetUserMetaData c:\fixed.vhdx
+    DeleteUserMetaData c:\fixed.vhdx
+    AddVirtualDiskParent c:\diff.vhdx c:\dynamic.vhdx
+    GetStorageDependencyInformation C:
+    GetAllAttachedVirtualDiskPhysicalPaths
+
+
